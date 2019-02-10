@@ -1,19 +1,23 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import Header from './components/Header'
-import './scss/app.scss';
+import AppBar from '@material-ui/core/AppBar';
+import Toolbar from '@material-ui/core/Toolbar';
+import Typography from '@material-ui/core/Typography';
+import Breakboard from './components/Breakboard';
 
-class HelloMessage extends React.Component {
-    render() {
-        return <div>
-            <Header/>
-            <div className="container">
-                <h1>Hello {this.props.name}</h1>
-            </div>
-        </div>
-    }
+function App() {
+  return (
+    <div>
+      <AppBar position="static">
+        <Toolbar>
+          <Typography variant="h6" color="inherit">
+            Breakboard
+          </Typography>
+        </Toolbar>
+      </AppBar>
+      <Breakboard />
+    </div>
+  );
 }
 
-let App = document.getElementById("app");
-
-ReactDOM.render(<HelloMessage name="Yomi" />, App);
+ReactDOM.render(<App />, document.getElementById("app"));
